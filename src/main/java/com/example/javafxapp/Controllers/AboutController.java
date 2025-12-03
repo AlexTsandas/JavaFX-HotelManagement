@@ -1,5 +1,8 @@
 package com.example.javafxapp.Controllers;
 
+import com.example.javafxapp.Navigation.Navigation;
+
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,13 +17,7 @@ public class AboutController {
 
     @FXML
     private void onBackClick() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/javafxapp/LoginPage.fxml"));
-            Stage stage = (Stage) backBtn.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Stage stage = (Stage) backBtn.getScene().getWindow();
+        Navigation.loadPage(stage, "/com/example/javafxapp/LoginPage.fxml");
     }
 }

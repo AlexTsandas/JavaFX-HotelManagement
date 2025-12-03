@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafxapp.Controllers.UserController"
+            prefWidth="900" prefHeight="700">
+
+    <!-- LEFT SIDEBAR -->
+    <left>
+        <VBox prefWidth="250" spacing="20" style="-fx-background-color: #2b2b2b; -fx-padding: 20;">
+            <children>
+                <Button fx:id="backBtn" text="Back"
+                        style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"
+                        prefHeight="40" prefWidth="200"/>
+                <Button fx:id="myBookingsBtn" text="My Bookings"
+                        style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"
+                        prefHeight="40" prefWidth="200"/>
+                <Button fx:id="bookRoomBtn" text="Book Room"
+                        style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"
+                        prefHeight="40" prefWidth="200"/>
+            </children>
+        </VBox>
+    </left>
+
+    <!-- TOP BAR -->
+    <top>
+        <HBox prefHeight="70" style="-fx-background-color: #3a3a3a; -fx-padding: 20; -fx-alignment: center-left;"
+              spacing="20">
+            <children>
+                <Label text="User Dashboard"
+                       style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- MAIN CONTENT -->
+    <center>
+        <AnchorPane fx:id="contentPane" style="-fx-background-color: #f4f4f4;">
+            <children>
+                <Label text="Welcome User" layoutX="20" layoutY="20"
+                       style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+                <!-- Εδώ θα φορτώνεις τα bookings ή το book room dynamically -->
+            </children>
+        </AnchorPane>
+    </center>
+
+</BorderPane>
+
+
+
+

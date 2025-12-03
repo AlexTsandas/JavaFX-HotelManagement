@@ -16,134 +16,127 @@
         prefWidth="900.0"
         xmlns="http://javafx.com/javafx/25"
         xmlns:fx="http://javafx.com/fxml/1"
-        fx:controller="com.example.javafxapp.Controllers.LoginPageController">
+        fx:controller="com.example.javafxapp.Controllers.LoginPageController"
+        stylesheets="@../../../CSS/LoginPage.css">
 
-   <children>
+    <children>
 
-      <HBox
-              AnchorPane.bottomAnchor="0.0"
-              AnchorPane.leftAnchor="0.0"
-              AnchorPane.rightAnchor="0.0"
-              AnchorPane.topAnchor="0.0">
+        <HBox
+                AnchorPane.bottomAnchor="0.0"
+                AnchorPane.leftAnchor="0.0"
+                AnchorPane.rightAnchor="0.0"
+                AnchorPane.topAnchor="0.0">
 
-         <!-- LEFT SIDE IMAGE -->
-         <AnchorPane
-                 prefWidth="500.0">
+            <!-- LEFT SIDE IMAGE -->
+            <AnchorPane
+                    prefWidth="500.0">
 
-            <children>
+                <children>
 
-               <ImageView
-                       fx:id="leftImage"
-                       fitHeight="700.0"
-                       fitWidth="500.0"
-                       pickOnBounds="true"
-                       preserveRatio="true"
-                       AnchorPane.bottomAnchor="0.0"
-                       AnchorPane.leftAnchor="0.0"
-                       AnchorPane.rightAnchor="0.0"
-                       AnchorPane.topAnchor="0.0">
+                    <ImageView
+                            fx:id="leftImage"
+                            fitHeight="700.0"
+                            fitWidth="500.0"
+                            pickOnBounds="true"
+                            preserveRatio="true"
+                            AnchorPane.bottomAnchor="0.0"
+                            AnchorPane.leftAnchor="0.0"
+                            AnchorPane.rightAnchor="0.0"
+                            AnchorPane.topAnchor="0.0">
 
-                  <image>
-                     <Image url="@../../../images/photo1.jpg"/>
-                  </image>
+                        <image>
+                            <Image url="@../../../images/photo1.jpg"/>
+                        </image>
 
-               </ImageView>
+                    </ImageView>
 
-            </children>
+                </children>
 
-         </AnchorPane>
+            </AnchorPane>
 
-         <!-- RIGHT SIDE FORM -->
-         <VBox
-                 alignment="TOP_CENTER"
-                 prefWidth="400.0"
-                 spacing="28.0"
-                 style="-fx-padding: 40 0 0 0;">
+            <!-- RIGHT SIDE FORM -->
+            <VBox
+                    alignment="TOP_CENTER"
+                    prefWidth="400.0"
+                    spacing="28.0"
+                    style="-fx-padding: 40 0 0 0;">
 
-            <children>
+                <children>
 
-               <!-- Logo -->
-               <ImageView
-                       fx:id="logoImage"
-                       fitHeight="180.0"
-                       fitWidth="195.0"
-                       pickOnBounds="true"
-                       preserveRatio="true">
+                    <!-- Logo -->
+                    <ImageView
+                            fx:id="logoImage"
+                            fitHeight="180.0"
+                            fitWidth="195.0"
+                            pickOnBounds="true"
+                            preserveRatio="true">
 
-                  <image>
-                     <Image url="@../../../images/HotelNest.png"/>
-                  </image>
+                        <image>
+                            <Image url="@../../../images/HotelNest.png"/>
+                        </image>
 
-               </ImageView>
+                    </ImageView>
 
-               <!-- Title -->
-               <Label
-                       fx:id="titleLabel"
-                       style="-fx-font-size: 32px; -fx-font-weight: bold;"
-                       text="Welcome!"/>
+                    <!-- Title -->
+                    <Label
+                            fx:id="titleLabel"
+                            style="-fx-font-size: 32px; -fx-font-weight: bold;"
+                            text="Welcome!"/>
 
-               <!-- ComboBox -->
-               <ComboBox
-                       fx:id="roleComboBox"
-                       maxHeight="-Infinity"
-                       maxWidth="-Infinity"
-                       prefWidth="200.0"
-                       promptText="Select Role"
-                       style="-fx-font-size: 16px;
-                                   -fx-font-weight: bold;
-                                   -fx-background-radius: 10;
-                                   -fx-background-color: #4da3ff;
-                                   -fx-text-fill: white;
-                                   -fx-border-radius: 10;
-                                   -fx-padding: 8;"/>
+                    <!-- ComboBox -->
+                    <ComboBox
+                            fx:id="roleComboBox"
+                            promptText="Select Role"
+                    />
 
-               <!-- Username -->
-               <TextField
-                       fx:id="usernameField"
-                       maxWidth="-Infinity"
-                       prefHeight="48.0"
-                       prefWidth="320.0"
-                       promptText="Username"
-                       style="-fx-font-size: 16px; -fx-background-radius: 8;"/>
+                    <!-- Username -->
+                    <TextField
+                            fx:id="usernameField"
+                            maxWidth="-Infinity"
+                            prefHeight="48.0"
+                            prefWidth="320.0"
+                            promptText="Username"
+                            style="-fx-font-size: 16px; -fx-background-radius: 8;"/>
 
-               <!-- Password -->
-               <PasswordField
-                       fx:id="passwordField"
-                       maxHeight="-Infinity"
-                       maxWidth="-Infinity"
-                       prefHeight="48.0"
-                       prefWidth="320.0"
-                       promptText="Password"
-                       style="-fx-font-size: 16px; -fx-background-radius: 8;"/>
+                    <!-- Password -->
+                    <PasswordField
+                            fx:id="passwordField"
+                            maxHeight="-Infinity"
+                            maxWidth="-Infinity"
+                            prefHeight="48.0"
+                            prefWidth="320.0"
+                            promptText="Password"
+                            style="-fx-font-size: 16px; -fx-background-radius: 8;"/>
 
-               <!-- Login Button -->
-               <Button
-                       fx:id="loginButton"
-                       prefHeight="52.0"
-                       prefWidth="150.0"
-                       style="-fx-font-size: 18px;
+                    <!-- Login Button -->
+                    <Button
+                            fx:id="loginButton"
+                            prefHeight="52.0"
+                            prefWidth="150.0"
+                            style="-fx-font-size: 18px;
                                    -fx-background-radius: 10;
                                    -fx-background-color: #4da3ff;
                                    -fx-text-fill: white;
                                    -fx-font-weight: bold;"
-                       text="Login"/>
+                            text="Login"
+                            onAction="#onLoginClick"/>
 
-               <!-- About Link -->
-               <Label
-                       fx:id="aboutLabel"
-                       style="-fx-font-size: 20px;
+                    <!-- About Link -->
+                    <Label
+                            fx:id="aboutLabel"
+                            style="-fx-font-size: 20px;
                                    -fx-font-weight: bold;
                                    -fx-text-fill: #2a73ff;
                                    -fx-underline: true;"
-                       text="About"/>
+                            text="About"/>
 
-            </children>
+                </children>
 
-         </VBox>
+            </VBox>
 
-      </HBox>
+        </HBox>
 
-   </children>
+    </children>
 
 </AnchorPane>
 

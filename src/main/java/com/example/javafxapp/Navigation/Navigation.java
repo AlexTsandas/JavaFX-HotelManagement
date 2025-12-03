@@ -7,11 +7,24 @@ import javafx.stage.Stage;
 
 public class Navigation {
 
-    public static void navigateTo(Stage stage, String fxmlPath) {
+    private static final double WIDTH = 900;
+    private static final double HEIGHT = 700;
+
+    public static void loadPage(Stage stage, String fxmlPath) {
         try {
             FXMLLoader loader = new FXMLLoader(Navigation.class.getResource(fxmlPath));
             Parent root = loader.load();
-            stage.setScene(new Scene(root));
+
+            Scene scene = new Scene(root, WIDTH, HEIGHT);
+            stage.setScene(scene);
+
+            // 🔒 FIXED WINDOW (μόνο αυτό προσθέσαμε)
+            stage.setResizable(false);
+            stage.setMinWidth(WIDTH);
+            stage.setMinHeight(HEIGHT);
+            stage.setMaxWidth(WIDTH);
+            stage.setMaxHeight(HEIGHT);
+
             stage.show();
 
         } catch (Exception e) {
@@ -19,4 +32,6 @@ public class Navigation {
         }
     }
 }
+
+
 

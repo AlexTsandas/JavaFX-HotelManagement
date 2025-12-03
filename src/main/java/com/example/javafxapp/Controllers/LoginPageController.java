@@ -1,5 +1,6 @@
 package com.example.javafxapp.Controllers;
 
+import com.example.javafxapp.Navigation.Navigation;
 import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
@@ -7,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -14,7 +16,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class LoginPageController {
-
+    @FXML
+    private ComboBox roleComboBox;
     @FXML
     private ImageView leftImage;
 
@@ -36,6 +39,7 @@ public class LoginPageController {
 
         // Προσθήκη click listener στο About Label
         aboutLabel.setOnMouseClicked(event -> openAboutPage());
+        roleComboBox.getItems().addAll("User", "Admin");
     }
 
     private void startSlideshow() {
@@ -73,15 +77,27 @@ public class LoginPageController {
 
     // Μέθοδος για να ανοίξει το AboutPage
     private void openAboutPage() {
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/javafxapp/AboutPage.fxml"));
-            Stage stage = (Stage) aboutLabel.getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
+        Stage stage = (Stage) aboutLabel.getScene().getWindow();
+        Navigation.loadPage(stage, "/com/example/javafxapp/AboutPage.fxml");
+    }
+
+    @FXML
+    private void onLoginClick() {
+        String role = (String) roleComboBox.getValue();
+
+        if (role == null) {
+            System.out.println("Please select a role.");
+            return;
+        }
+
+        Stage stage = (Stage) roleComboBox.getScene().getWindow();
+
+        switch (role) {
+            case "User" -> Navigation.loadPage(stage, "/com/example/javafxapp/UserLogin.fxml");
+            case "Admin" -> Navigation.loadPage(stage, "/com/example/javafxapp/AdminPage.fxml");
         }
     }
+
 }
 
 
