@@ -8,14 +8,24 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class LoginPageController {
+    @FXML
+    private VBox formVBox; // το VBox που περιέχει loginButton και errorLabel
+    @FXML
+    private Label errorLabel; // το error label που θα εμφανίζεται κάτω από το button
+    @FXML
+    private Button loginButton; // το login button
+    @FXML
+    private TextField usernameField;
+    @FXML
+    private PasswordField passwordField;
     @FXML
     private ComboBox roleComboBox;
     @FXML
@@ -35,12 +45,20 @@ public class LoginPageController {
 
     @FXML
     public void initialize() {
+        roleComboBox.getItems().setAll("User", "Admin");
+
+        usernameField.setText("");
+        passwordField.setText("");
+        errorLabel.setOpacity(0);
+
+        // ΜΗΝ αφήνεις παλιό spacing ή animation state
+        errorLabel.setTranslateY(0);
+
         startSlideshow();
 
-        // Προσθήκη click listener στο About Label
         aboutLabel.setOnMouseClicked(event -> openAboutPage());
-        roleComboBox.getItems().addAll("User", "Admin");
     }
+
 
     private void startSlideshow() {
         // Αρχική εικόνα
@@ -81,20 +99,50 @@ public class LoginPageController {
         Navigation.loadPage(stage, "/com/example/javafxapp/AboutPage.fxml");
     }
 
+    private boolean swapped = false; // για να μην γίνει το swap πολλαπλές φορές
+
+
+
+
+    private void showError(String msg) {
+        errorLabel.setText(msg);
+        errorLabel.setOpacity(1);
+    }
+
+
     @FXML
     private void onLoginClick() {
         String role = (String) roleComboBox.getValue();
 
         if (role == null) {
-            System.out.println("Please select a role.");
+            showError("Please select a role.");
+
             return;
         }
 
         Stage stage = (Stage) roleComboBox.getScene().getWindow();
 
-        switch (role) {
-            case "User" -> Navigation.loadPage(stage, "/com/example/javafxapp/UserLogin.fxml");
-            case "Admin" -> Navigation.loadPage(stage, "/com/example/javafxapp/AdminPage.fxml");
+        boolean valid = false;
+
+        if (role.equals("Admin") &&
+                usernameField.getText().equals("Admin") &&
+                passwordField.getText().equals("Admin")) {
+
+            valid = true;
+            Navigation.loadPage(stage, "/com/example/javafxapp/AdminLogin.fxml");
+        }
+
+        if (role.equals("User") &&
+                usernameField.getText().equals("User") &&
+                passwordField.getText().equals("User")) {
+
+            valid = true;
+            Navigation.loadPage(stage, "/com/example/javafxapp/UserLogin.fxml");
+        }
+
+        if (!valid) {
+            showError("Sorry, your password was incorrect.\nPlease double-check your password.");
+
         }
     }
 

@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 public class Navigation {
 
     private static final double WIDTH = 900;
-    private static final double HEIGHT = 700;
+    private static final double HEIGHT = 750;
 
     public static void loadPage(Stage stage, String fxmlPath) {
         try {
