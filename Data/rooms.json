@@ -1,1 +1,68 @@
-[{"id":"101","type":"Single","price":45.0,"status":"available"},{"id":"102","type":"Single","price":45.0,"status":"available"},{"id":"103","type":"Single","price":48.0,"status":"available"},{"id":"201","type":"Double","price":65.0,"status":"available"},{"id":"202","type":"Double","price":65.0,"status":"available"},{"id":"203","type":"Double","price":70.0,"status":"available"},{"id":"301","type":"Suite","price":120.0,"status":"available"},{"id":"302","type":"Suite","price":120.0,"status":"available"},{"id":"401","type":"Family","price":90.0,"status":"available"},{"id":"402","type":"Family","price":95.0,"status":"available"},{"id":"501","type":"Deluxe","price":140.0,"status":"available"}]
+[
+  {
+    "id": "101",
+    "type": "Single",
+    "price": 45.0,
+    "status": "available"
+  },
+  {
+    "id": "102",
+    "type": "Single",
+    "price": 45.0,
+    "status": "available"
+  },
+  {
+    "id": "103",
+    "type": "Single",
+    "price": 48.0,
+    "status": "available"
+  },
+  {
+    "id": "201",
+    "type": "Double",
+    "price": 65.0,
+    "status": "available"
+  },
+  {
+    "id": "202",
+    "type": "Double",
+    "price": 65.0,
+    "status": "available"
+  },
+  {
+    "id": "203",
+    "type": "Double",
+    "price": 70.0,
+    "status": "available"
+  },
+  {
+    "id": "301",
+    "type": "Suite",
+    "price": 120.0,
+    "status": "available"
+  },
+  {
+    "id": "302",
+    "type": "Suite",
+    "price": 120.0,
+    "status": "available"
+  },
+  {
+    "id": "401",
+    "type": "Family",
+    "price": 90.0,
+    "status": "available"
+  },
+  {
+    "id": "402",
+    "type": "Family",
+    "price": 95.0,
+    "status": "available"
+  },
+  {
+    "id": "501",
+    "type": "Deluxe",
+    "price": 140.0,
+    "status": "available"
+  }
+]
