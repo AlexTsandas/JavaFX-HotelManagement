@@ -2,40 +2,31 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.javafxapp.Controllers.AdminRoomsController"
-            prefWidth="900" prefHeight="700">
+<BorderPane prefHeight="700" prefWidth="900" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxapp.Controllers.AdminRoomsController">
 
     <!-- LEFT SIDEBAR -->
     <left>
         <VBox prefWidth="250" spacing="20" style="-fx-background-color: #2b2b2b; -fx-padding: 20;">
             <children>
-                <Button fx:id="backBtn" text="Back"
-                        style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"
-                        prefHeight="40" prefWidth="200" onAction="#onBackClick"/>
-                <Button fx:id="roomsBtn" text="Rooms Management"
-                        style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"
-                        prefHeight="40" prefWidth="200" onAction="#onRoomsClick"/>
-                <Button fx:id="bookingsBtn" text="Bookings Management"
-                        style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;"
-                        prefHeight="40" prefWidth="200" onAction="#onBookingsClick"/>
+                <Button fx:id="backBtn" onAction="#onBackClick" prefHeight="40" prefWidth="200" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Back" />
+                <Button fx:id="roomsBtn" onAction="#onRoomsClick" prefHeight="40" prefWidth="200" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Rooms Management" />
+                <Button fx:id="bookingsBtn" onAction="#onBookingsClick" prefHeight="40" prefWidth="200" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Bookings Management" />
             </children>
         </VBox>
     </left>
 
     <!-- TOP BAR -->
     <top>
-        <HBox prefHeight="70" style="-fx-background-color: #3a3a3a; -fx-padding: 20; -fx-alignment: center-left;"
-              spacing="20">
+        <HBox prefHeight="70" spacing="20" style="-fx-background-color: #3a3a3a; -fx-padding: 20; -fx-alignment: center-left;">
             <children>
-                <Label text="Admin Dashboard"
-                       style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+                <Label style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" text="Admin Dashboard" />
             </children>
         </HBox>
     </top>
@@ -44,11 +35,30 @@
     <center>
         <AnchorPane fx:id="contentPane" style="-fx-background-color: #f4f4f4;">
             <children>
-                <Label text="Rooms are Available" layoutX="20" layoutY="20"
-                       style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                <!-- Εδώ θα φορτώνεις τα bookings ή το book room dynamically -->
+
+                <!-- LISTVIEW FOR ROOMS -->
+                <ListView fx:id="roomsList" layoutX="20" layoutY="20" prefHeight="400" prefWidth="600" />
+
+                <!-- DELETE ROOM -->
+                <Label layoutX="20" layoutY="440" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Delete Room by ID:" />
+                <TextField fx:id="deleteRoomField" layoutX="200" layoutY="440" prefWidth="150" />
+                <Button layoutX="360" layoutY="440" style="-fx-background-color: #c0392b;" text="Delete" onAction="#onDeleteRoomClick" />
+
+
+                <!-- ADD NEW ROOM -->
+                <Label layoutX="20" layoutY="490" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Add New Room:" />
+
+                <TextField fx:id="roomIdField" layoutX="20" layoutY="530" prefWidth="140" promptText="Room ID" />
+                <TextField fx:id="roomTypeField" layoutX="180" layoutY="530" prefWidth="140" promptText="Type" />
+                <TextField fx:id="roomPriceField" layoutX="340" layoutY="530" prefWidth="140" promptText="Price" />
+                <TextField fx:id="roomStatusField" layoutX="500" layoutY="530" prefWidth="140" promptText="Status" />
+
+                <Button layoutX="20" layoutY="580" style="-fx-background-color: green;" text="Add Room" onAction="#onAddRoomClick" />
+
+
             </children>
         </AnchorPane>
     </center>
+
 
 </BorderPane>

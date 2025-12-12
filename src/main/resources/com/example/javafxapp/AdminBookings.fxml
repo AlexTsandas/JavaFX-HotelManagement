@@ -7,9 +7,12 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <BorderPane xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.javafxapp.Controllers.AdminRoomsController"
+            fx:controller="com.example.javafxapp.Controllers.AdminBookingsController"
             prefWidth="900" prefHeight="700">
 
     <!-- LEFT SIDEBAR -->
@@ -43,12 +46,58 @@
     <!-- MAIN CONTENT -->
     <center>
         <AnchorPane fx:id="contentPane" style="-fx-background-color: #f4f4f4;">
+
             <children>
-                <Label text="Bookings are coming NIgggg" layoutX="20" layoutY="20"
-                       style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                <!-- Εδώ θα φορτώνεις τα bookings ή το book room dynamically -->
+
+                <!-- FILTERS -->
+                <Label text="Filter Rooms:" layoutX="20" layoutY="20"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+
+                <ComboBox fx:id="filterBox"
+                          layoutX="150" layoutY="18"
+                          prefWidth="200"
+                          promptText="Select filter" />
+
+                <!-- LISTVIEW -->
+                <ListView fx:id="roomsList"
+                          layoutX="20" layoutY="60"
+                          prefWidth="600" prefHeight="400" />
+
+                <!-- BOOK / UNBOOK SECTION -->
+                <Label text="Room ID:" layoutX="20" layoutY="480"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+                <TextField fx:id="roomIdField"
+                           layoutX="120" layoutY="478"
+                           prefWidth="150"
+                           promptText="Enter Room ID" />
+
+                <Label text="Username:" layoutX="300" layoutY="480"
+                       style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+                <TextField fx:id="usernameField"
+                           layoutX="400" layoutY="478"
+                           prefWidth="150"
+                           promptText="Customer Username" />
+
+                <!-- BUTTONS -->
+                <Button text="BOOK"
+                        onAction="#onBookClick"
+                        layoutX="20" layoutY="530"
+                        prefWidth="150"
+                        style="-fx-background-color: green; -fx-text-fill: white;" />
+
+                <Button text="UNBOOK"
+                        layoutX="200" layoutY="530"
+                        onAction="#onUnbookClick"
+                        prefWidth="150"
+                        style="-fx-background-color: #c0392b; -fx-text-fill: white;" />
+
             </children>
+
+
         </AnchorPane>
-    </center>
+</center>
+
 
 </BorderPane>
