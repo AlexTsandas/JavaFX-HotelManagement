@@ -48,10 +48,10 @@
                 <!-- ADD NEW ROOM -->
                 <Label layoutX="20" layoutY="490" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Add New Room:" />
 
-                <TextField fx:id="roomIdField" layoutX="20" layoutY="530" prefWidth="140" promptText="Room ID" />
-                <TextField fx:id="roomTypeField" layoutX="180" layoutY="530" prefWidth="140" promptText="Type" />
-                <TextField fx:id="roomPriceField" layoutX="340" layoutY="530" prefWidth="140" promptText="Price" />
-                <TextField fx:id="roomStatusField" layoutX="500" layoutY="530" prefWidth="140" promptText="Status" />
+                <TextField fx:id="roomIdField" layoutX="20" layoutY="530" prefWidth="130" promptText="Room ID" />
+                <TextField fx:id="roomTypeField" layoutX="180" layoutY="530" prefWidth="130" promptText="Type" />
+                <TextField fx:id="roomPriceField" layoutX="340" layoutY="530" prefWidth="130" promptText="Price" />
+                <TextField fx:id="roomStatusField" layoutX="500" layoutY="530" prefWidth="130" promptText="Status" />
 
                 <Button layoutX="20" layoutY="580" style="-fx-background-color: green;" text="Add Room" onAction="#onAddRoomClick" />
 

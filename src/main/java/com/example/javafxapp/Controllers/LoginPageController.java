@@ -1,4 +1,5 @@
 package com.example.javafxapp.Controllers;
+import com.example.javafxapp.Session.UserSession;
 import com.example.javafxapp.Json_services.LoginService;
 import com.example.javafxapp.Navigation.Navigation;
 import javafx.animation.FadeTransition;
@@ -114,7 +115,6 @@ public class LoginPageController {
     @FXML
     private void onLoginClick() {
 
-        // 1. Πάρε ρόλο από combobox
         String selectedRole = (String) roleComboBox.getValue();
 
         if (selectedRole == null) {
@@ -125,7 +125,6 @@ public class LoginPageController {
         String username = usernameField.getText().trim();
         String password = passwordField.getText().trim();
 
-        // 2. Φόρτωσε όλους τους users από το JSON
         LoginService service = new LoginService();
         List<LoginService.User> users = service.loadUsers();
 
@@ -134,12 +133,9 @@ public class LoginPageController {
             return;
         }
 
-        // 3. Ελεγχος αν υπάρχει user με αυτά τα δεδομένα
         LoginService.User matchedUser = null;
 
-        for (int i = 0; i < users.size(); i++) {
-            LoginService.User u = users.get(i);
-
+        for (LoginService.User u : users) {
             if (u.username.equals(username) &&
                     u.password.equals(password) &&
                     u.role.equals(selectedRole)) {
@@ -149,21 +145,31 @@ public class LoginPageController {
             }
         }
 
-        // 4. Αν δεν βρέθηκε user → λάθος
         if (matchedUser == null) {
             showError("Sorry, your password was incorrect.\nPlease double-check your password.");
             return;
         }
 
-        // 5. Φόρτωσε την σωστή σελίδα
+        // ✅ ΕΔΩ ΑΚΡΙΒΩΣ ΑΠΟΘΗΚΕΥΟΥΜΕ ΤΟ LOGGED-IN USER
+        UserSession.login(matchedUser.username);
+
         Stage stage = (Stage) roleComboBox.getScene().getWindow();
 
+        // ---------------------------
+        //  * ADMIN LOGIN *
+        // ---------------------------
         if (matchedUser.role.equals("Admin")) {
             Navigation.loadPage(stage, "/com/example/javafxapp/AdminLogin.fxml");
-        } else if (matchedUser.role.equals("User")) {
-            Navigation.loadPage(stage, "/com/example/javafxapp/UserLogin.fxml");
+            return;
         }
+
+        // ---------------------------
+        //  * USER LOGIN *
+        // ---------------------------
+        Navigation.loadPage(stage, "/com/example/javafxapp/UserLogin.fxml");
     }
+
+
 
 
 }
