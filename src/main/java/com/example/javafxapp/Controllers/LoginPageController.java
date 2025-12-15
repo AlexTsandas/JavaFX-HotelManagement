@@ -6,9 +6,6 @@ import javafx.animation.FadeTransition;
 import javafx.animation.PauseTransition;
 import javafx.animation.SequentialTransition;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -95,7 +92,7 @@ public class LoginPageController {
         slideshow.play();
     }
 
-    // Μέθοδος για να ανοίξει το AboutPage
+
     private void openAboutPage() {
         Stage stage = (Stage) aboutLabel.getScene().getWindow();
         Navigation.loadPage(stage, "/com/example/javafxapp/AboutPage.fxml");
@@ -150,22 +147,18 @@ public class LoginPageController {
             return;
         }
 
-        // ✅ ΕΔΩ ΑΚΡΙΒΩΣ ΑΠΟΘΗΚΕΥΟΥΜΕ ΤΟ LOGGED-IN USER
+
         UserSession.login(matchedUser.username);
 
         Stage stage = (Stage) roleComboBox.getScene().getWindow();
 
-        // ---------------------------
-        //  * ADMIN LOGIN *
-        // ---------------------------
+
         if (matchedUser.role.equals("Admin")) {
             Navigation.loadPage(stage, "/com/example/javafxapp/AdminLogin.fxml");
             return;
         }
 
-        // ---------------------------
-        //  * USER LOGIN *
-        // ---------------------------
+
         Navigation.loadPage(stage, "/com/example/javafxapp/UserLogin.fxml");
     }
 

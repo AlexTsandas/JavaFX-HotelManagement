@@ -5,21 +5,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
+<AnchorPane prefHeight="700.0" prefWidth="900.0"
+            xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafxapp.Controllers.AboutController"
+            style="-fx-background-color: linear-gradient(to bottom right, #eef5ff, #dbe9ff);">
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0"
-            prefWidth="900.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.javafxapp.Controllers.AboutController">
     <children>
-        <VBox layoutX="237.0" layoutY="184.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0"
-              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <children>
-                <Label text="Το HotelNest είναι μια εφαρμογή για διαχείριση κρατήσεων,χρηστών και υπηρεσιών.Παρέχει εργαλεία για πελάτες και διαχειριστές ώστε να χειρίζονται τα δεδομένα εύκολα και γρήγορα."/>
-                <Button text="Back"
-                        fx:id="backBtn"
-                        style="-fx-background-color: #4682B4; -fx-text-fill: white; -fx-padding: 10 20;"
-                        onAction="#onBackClick"/>
 
-            </children>
+        <VBox spacing="24"
+              alignment="CENTER"
+              AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0"
+              style="-fx-padding: 80;">
+
+            <Label text="About HotelNest"
+                   style="-fx-font-size: 32px;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: #2a2a2a;"/>
+
+            <Label wrapText="true"
+                   maxWidth="600"
+                   text="Το HotelNest είναι ένα ολοκληρωμένο πληροφοριακό σύστημα ξενοδοχείου, σχεδιασμένο για να απλοποιεί τη διαχείριση δωματίων και κρατήσεων.Ο διαχειριστής μπορεί να προσθέτει, να αφαιρεί και να παρακολουθεί τη διαθεσιμότητα των δωματίων, καθώς και να ελέγχει τις κρατήσεις σε πραγματικό χρόνο. Παράλληλα, οι χρήστες έχουν τη δυνατότητα να βλέπουν μόνο τα διαθέσιμα δωμάτια, να πραγματοποιούν κρατήσεις και να διαχειρίζονται τις δικές τους κρατήσεις εύκολα και γρήγορα."                   style="-fx-font-size: 16px;
+                          -fx-text-fill: #3a3a3a;
+                          -fx-line-spacing: 6;"/>
+
+            <Button fx:id="backBtn"
+                    text="Back"
+                    onAction="#onBackClick"
+                    prefWidth="140"
+                    prefHeight="42"
+                    style="-fx-background-color: #4a90e2;
+                           -fx-text-fill: white;
+                           -fx-font-size: 16px;
+                           -fx-background-radius: 12;
+                           -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0, 0, 2);"/>
+
         </VBox>
+
     </children>
 </AnchorPane>
+

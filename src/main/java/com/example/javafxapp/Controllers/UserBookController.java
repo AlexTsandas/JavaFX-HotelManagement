@@ -15,24 +15,25 @@ import java.util.ResourceBundle;
 
 public class UserBookController implements Initializable {
 
-    // SERVICES
+
     private RoomService roomService = new RoomService();
     private List<Room> rooms;
 
-    // FXML
+
     @FXML private ListView<String> availableRoomsList;
     @FXML private TextField roomIdField;
     @FXML private Label errorLabel;
     @FXML private Button backBtn;
+    @FXML private Button myBookingsBtn;
 
-    // INIT
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         rooms = roomService.loadRooms();
         loadAvailableRooms();
     }
 
-    // LOAD AVAILABLE ROOMS
+
     private void loadAvailableRooms() {
         availableRoomsList.getItems().clear();
 
@@ -45,7 +46,7 @@ public class UserBookController implements Initializable {
         }
     }
 
-    // BOOK ROOM
+
     @FXML
     private void onBookClick() {
 
@@ -70,7 +71,7 @@ public class UserBookController implements Initializable {
             return;
         }
 
-        // BOOK
+
         target.status = username;
         roomService.saveRooms(rooms);
 
@@ -79,14 +80,20 @@ public class UserBookController implements Initializable {
         errorLabel.setText("");
     }
 
-    // BACK
+
     @FXML
     private void onBackClick() {
         Stage stage = (Stage) backBtn.getScene().getWindow();
         Navigation.loadPage(stage, "/com/example/javafxapp/LoginPage.fxml");
     }
 
-    // ERROR
+    @FXML
+    private void onMyBookingsClick() {
+        Stage stage = (Stage) myBookingsBtn.getScene().getWindow();
+        Navigation.loadPage(stage, "/com/example/javafxapp/UsersBooking.fxml");
+    }
+
+
     private void showError(String msg) {
         errorLabel.setText(msg);
         errorLabel.setOpacity(1);

@@ -12,7 +12,7 @@
             fx:controller="com.example.javafxapp.Controllers.AdminController"
             prefWidth="900" prefHeight="700">
 
-    <!-- LEFT SIDEBAR -->
+
     <left>
         <VBox prefWidth="250" spacing="20" style="-fx-background-color: #2b2b2b; -fx-padding: 20;">
             <children>
@@ -29,7 +29,7 @@
         </VBox>
     </left>
 
-    <!-- TOP BAR -->
+
     <top>
         <HBox prefHeight="70" style="-fx-background-color: #3a3a3a; -fx-padding: 20; -fx-alignment: center-left;"
               spacing="20">
@@ -40,13 +40,13 @@
         </HBox>
     </top>
 
-    <!-- MAIN CONTENT -->
+
     <center>
         <AnchorPane fx:id="contentPane" style="-fx-background-color: #f4f4f4;">
             <children>
                 <Label text="Welcome Admin" layoutX="20" layoutY="20"
                        style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
-                <!-- Εδώ θα φορτώνεις τα bookings ή το book room dynamically -->
+
             </children>
         </AnchorPane>
     </center>

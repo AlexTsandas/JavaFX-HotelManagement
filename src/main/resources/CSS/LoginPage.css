@@ -1,4 +1,4 @@
-/* ======= COMBOBOX STYLE (κάνει το combobox ίδιο με το LOGIN button) ======= */
+
 
 .combo-box {
     -fx-pref-width: 320px;
@@ -12,13 +12,13 @@
     -fx-padding: 0 10 0 10;
 }
 
-/* Το prompt text άσπρο */
+
 .combo-box .text-field,
 .combo-box .list-cell {
     -fx-text-fill: white;
 }
 
-/* Το dropdown list να έχει τα ίδια χρώματα */
+
 .combo-box-popup .list-view {
     -fx-background-color: #4da3ff;
     -fx-control-inner-background: #4da3ff;
@@ -33,7 +33,7 @@
     -fx-font-size: 16px;
 }
 
-/* Το arrow button */
+
 .combo-box .arrow-button {
     -fx-background-color: transparent;
 }

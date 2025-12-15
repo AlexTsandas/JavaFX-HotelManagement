@@ -20,6 +20,9 @@ public class UserController implements Initializable {
     private Button backBtn;
 
     @FXML
+    private Button myBookingsBtn;
+
+    @FXML
     private Button bookRoomBtn;
 
     @Override
@@ -38,6 +41,12 @@ public class UserController implements Initializable {
     private void onBookRoomClick() {
         Stage stage = (Stage) bookRoomBtn.getScene().getWindow();
         Navigation.loadPage(stage, "/com/example/javafxapp/UserBookRoom.fxml");
+    }
+
+    @FXML
+    private void onMyBookingsClick() {
+        Stage stage = (Stage) myBookingsBtn.getScene().getWindow();
+        Navigation.loadPage(stage, "/com/example/javafxapp/UsersBooking.fxml");
     }
 }
 

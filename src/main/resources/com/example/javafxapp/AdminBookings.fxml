@@ -15,7 +15,7 @@
             fx:controller="com.example.javafxapp.Controllers.AdminBookingsController"
             prefWidth="900" prefHeight="700">
 
-    <!-- LEFT SIDEBAR -->
+
     <left>
         <VBox prefWidth="250" spacing="20" style="-fx-background-color: #2b2b2b; -fx-padding: 20;">
             <children>
@@ -32,7 +32,7 @@
         </VBox>
     </left>
 
-    <!-- TOP BAR -->
+
     <top>
         <HBox prefHeight="70" style="-fx-background-color: #3a3a3a; -fx-padding: 20; -fx-alignment: center-left;"
               spacing="20">
@@ -43,13 +43,13 @@
         </HBox>
     </top>
 
-    <!-- MAIN CONTENT -->
+
     <center>
         <AnchorPane fx:id="contentPane" style="-fx-background-color: #f4f4f4;">
 
             <children>
 
-                <!-- FILTERS -->
+
                 <Label text="Filter Rooms:" layoutX="20" layoutY="20"
                        style="-fx-font-size: 18px; -fx-font-weight: bold;" />
 
@@ -58,12 +58,12 @@
                           prefWidth="200"
                           promptText="Select filter" />
 
-                <!-- LISTVIEW -->
+
                 <ListView fx:id="roomsList"
                           layoutX="20" layoutY="60"
                           prefWidth="600" prefHeight="400" />
 
-                <!-- BOOK / UNBOOK SECTION -->
+
                 <Label text="Room ID:" layoutX="20" layoutY="480"
                        style="-fx-font-size: 16px; -fx-font-weight: bold;" />
 
@@ -80,7 +80,7 @@
                            prefWidth="150"
                            promptText="Customer Username" />
 
-                <!-- BUTTONS -->
+
                 <Button text="BOOK"
                         onAction="#onBookClick"
                         layoutX="20" layoutY="530"

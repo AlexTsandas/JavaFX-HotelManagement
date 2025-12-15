@@ -14,7 +14,6 @@
             fx:controller="com.example.javafxapp.Controllers.UserBookController"
             prefWidth="900" prefHeight="700">
 
-    <!-- LEFT SIDEBAR -->
     <left>
         <VBox prefWidth="250" spacing="20"
               style="-fx-background-color: linear-gradient(to bottom, #d8eaff, #b7d8ff); -fx-padding: 20;">
@@ -34,7 +33,7 @@
                                -fx-font-size: 16px;
                                -fx-background-radius: 12;
                                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);"
-                        prefHeight="40" prefWidth="200"/>
+                        prefHeight="40" prefWidth="200" onAction="#onMyBookingsClick"/>
 
                 <Button fx:id="bookRoomBtn" text="Book Room"
                         style="-fx-background-color: #76a9ff;
@@ -48,7 +47,6 @@
         </VBox>
     </left>
 
-    <!-- TOP BAR -->
     <top>
         <HBox prefHeight="70"
               style="-fx-background-color: #a3c8ff; -fx-padding: 20; -fx-alignment: center-left;"
@@ -60,7 +58,6 @@
         </HBox>
     </top>
 
-    <!-- MAIN CONTENT -->
     <center>
         <AnchorPane fx:id="contentPane" style="-fx-background-color: #eef5ff;">
 
@@ -68,7 +65,6 @@
 
                 <VBox layoutX="20" layoutY="20" spacing="20" prefWidth="600">
 
-                    <!-- AVAILABLE ROOMS LIST -->
                     <VBox spacing="10">
                         <Label text="Available Rooms:"
                                style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
@@ -81,7 +77,6 @@
                         />
                     </VBox>
 
-                    <!-- INPUT ROOM ID -->
                     <VBox spacing="8">
                         <Label text="Enter Room ID to Book:"
                                style="-fx-font-size: 16px;"/>
@@ -91,7 +86,6 @@
                                       -fx-padding: 8;"/>
                     </VBox>
 
-                    <!-- BOOK BUTTON + ERROR LABEL -->
                     <HBox spacing="15" alignment="CENTER_LEFT">
 
                         <Button fx:id="bookBtn" text="Book Selected Room"

@@ -18,7 +18,7 @@ public class Navigation {
             Scene scene = new Scene(root, WIDTH, HEIGHT);
             stage.setScene(scene);
 
-            // 🔒 FIXED WINDOW (μόνο αυτό προσθέσαμε)
+
             stage.setResizable(false);
             stage.setMinWidth(WIDTH);
             stage.setMinHeight(HEIGHT);

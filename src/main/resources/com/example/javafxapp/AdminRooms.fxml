@@ -11,7 +11,7 @@
 
 <BorderPane prefHeight="700" prefWidth="900" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafxapp.Controllers.AdminRoomsController">
 
-    <!-- LEFT SIDEBAR -->
+
     <left>
         <VBox prefWidth="250" spacing="20" style="-fx-background-color: #2b2b2b; -fx-padding: 20;">
             <children>
@@ -22,7 +22,6 @@
         </VBox>
     </left>
 
-    <!-- TOP BAR -->
     <top>
         <HBox prefHeight="70" spacing="20" style="-fx-background-color: #3a3a3a; -fx-padding: 20; -fx-alignment: center-left;">
             <children>
@@ -31,21 +30,17 @@
         </HBox>
     </top>
 
-    <!-- MAIN CONTENT -->
     <center>
         <AnchorPane fx:id="contentPane" style="-fx-background-color: #f4f4f4;">
             <children>
 
-                <!-- LISTVIEW FOR ROOMS -->
                 <ListView fx:id="roomsList" layoutX="20" layoutY="20" prefHeight="400" prefWidth="600" />
 
-                <!-- DELETE ROOM -->
                 <Label layoutX="20" layoutY="440" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Delete Room by ID:" />
                 <TextField fx:id="deleteRoomField" layoutX="200" layoutY="440" prefWidth="150" />
                 <Button layoutX="360" layoutY="440" style="-fx-background-color: #c0392b;" text="Delete" onAction="#onDeleteRoomClick" />
 
 
-                <!-- ADD NEW ROOM -->
                 <Label layoutX="20" layoutY="490" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Add New Room:" />
 
                 <TextField fx:id="roomIdField" layoutX="20" layoutY="530" prefWidth="130" promptText="Room ID" />

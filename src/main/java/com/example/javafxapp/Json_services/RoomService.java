@@ -20,7 +20,7 @@ public class RoomService {
 
     private final String PATH = "Data/rooms.json";
 
-    // LOAD
+
     public List<Room> loadRooms() {
         try {
             File file = new File(PATH);
@@ -38,7 +38,7 @@ public class RoomService {
     }
 
 
-    // SAVE
+
     public void saveRooms(List<Room> rooms) {
         try {
             FileWriter writer = new FileWriter(PATH);

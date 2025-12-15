@@ -28,7 +28,7 @@ public class AdminBookingsController implements Initializable {
     @FXML private Button roomsBtn;
     @FXML private Button bookingsBtn;
 
-    // ---------------- NAVIGATION ----------------
+
 
     @FXML
     private void onBackClick() {
@@ -48,7 +48,7 @@ public class AdminBookingsController implements Initializable {
         Navigation.loadPage(stage, "/com/example/javafxapp/AdminBookings.fxml");
     }
 
-    // ---------------- INITIALIZATION ----------------
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         rooms = roomService.loadRooms();
@@ -61,7 +61,7 @@ public class AdminBookingsController implements Initializable {
         filterBox.setOnAction(e -> loadRooms(filterBox.getValue()));
     }
 
-    // ---------------- LOAD ROOMS BY FILTER ----------------
+
     private void loadRooms(String filter) {
         roomsList.getItems().clear();
 
@@ -75,7 +75,7 @@ public class AdminBookingsController implements Initializable {
         }
     }
 
-    // ---------------- BOOK ROOM ----------------
+
     @FXML
     private void onBookClick() {
         String id = roomIdField.getText().trim();
@@ -102,7 +102,6 @@ public class AdminBookingsController implements Initializable {
         loadRooms(filterBox.getValue());
     }
 
-    // ---------------- UNBOOK ROOM ----------------
     @FXML
     private void onUnbookClick() {
         String id = roomIdField.getText().trim();
@@ -128,7 +127,7 @@ public class AdminBookingsController implements Initializable {
         loadRooms(filterBox.getValue());
     }
 
-    // ---------------- FIND ROOM BY ID ----------------
+
     private Room findRoom(String id) {
         for (Room r : rooms) {
             if (r.id.equalsIgnoreCase(id)) return r;
@@ -136,7 +135,7 @@ public class AdminBookingsController implements Initializable {
         return null;
     }
 
-    // ---------------- ERROR POPUP ----------------
+
     private void showError(String msg) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");

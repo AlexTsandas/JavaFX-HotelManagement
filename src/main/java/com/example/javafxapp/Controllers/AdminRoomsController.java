@@ -14,11 +14,11 @@ import java.util.ResourceBundle;
 
 public class AdminRoomsController implements Initializable {
 
-    // SERVICE
+
     private RoomService roomService = new RoomService();
     private List<Room> rooms;
 
-    // FXML
+
     @FXML private ListView<String> roomsList;
 
     @FXML private TextField deleteRoomField;
@@ -33,7 +33,7 @@ public class AdminRoomsController implements Initializable {
     @FXML private Button bookingsBtn;
 
 
-    // NAVIGATION BUTTONS
+
     @FXML
     private void onBackClick() {
         Stage stage = (Stage) backBtn.getScene().getWindow();
@@ -53,7 +53,7 @@ public class AdminRoomsController implements Initializable {
     }
 
 
-    // INITIALIZE
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         rooms = roomService.loadRooms();
@@ -61,7 +61,7 @@ public class AdminRoomsController implements Initializable {
     }
 
 
-    // LOAD ROOMS TO LISTVIEW
+
     private void loadRoomsIntoListView() {
         roomsList.getItems().clear();
         for (Room r : rooms) {
@@ -72,7 +72,7 @@ public class AdminRoomsController implements Initializable {
     }
 
 
-    // DELETE ROOM
+
     @FXML
     private void onDeleteRoomClick() {
         String id = deleteRoomField.getText().trim();
@@ -96,7 +96,7 @@ public class AdminRoomsController implements Initializable {
     }
 
 
-    // ADD ROOM
+
     @FXML
     private void onAddRoomClick() {
 
@@ -121,7 +121,7 @@ public class AdminRoomsController implements Initializable {
     }
 
 
-    // ERROR POPUP
+
     private void showError(String msg) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error");

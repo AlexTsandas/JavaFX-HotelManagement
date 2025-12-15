@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.javafxapp.Controllers.UsersBookingController"
+            prefWidth="900" prefHeight="700">
+
+    <left>
+        <VBox prefWidth="250" spacing="20"
+              style="-fx-background-color: linear-gradient(to bottom, #d8eaff, #b7d8ff); -fx-padding: 20;">
+            <children>
+
+                <Button fx:id="backBtn" text="Back"
+                        style=" -fx-background-color: #ff6b6b;
+                                -fx-text-fill: white;
+                                -fx-font-size: 16px;
+                                -fx-background-radius: 12;
+                                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);"
+                        prefHeight="40" prefWidth="200" onAction="#onBackClick"/>
+
+                <Button fx:id="myBookingsBtn" text="My Bookings"
+                        style="-fx-background-color: #76a9ff;
+                               -fx-text-fill: white;
+                               -fx-font-size: 16px;
+                               -fx-background-radius: 12;
+                               -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);"
+                        prefHeight="40" prefWidth="200"/>
+
+                <Button fx:id="bookRoomBtn" text="Book Room"
+                        style="-fx-background-color: #76a9ff;
+                               -fx-text-fill: white;
+                               -fx-font-size: 16px;
+                               -fx-background-radius: 12;
+                               -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0, 0, 2);"
+                        prefHeight="40" prefWidth="200" onAction="#onBookRoomClick"/>
+
+            </children>
+        </VBox>
+    </left>
+
+    <top>
+        <HBox prefHeight="70"
+              style="-fx-background-color: #a3c8ff; -fx-padding: 20; -fx-alignment: center-left;"
+              spacing="20">
+            <children>
+                <Label text="User Dashboard"
+                       style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1a1a1a;"/>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <AnchorPane fx:id="contentPane" style="-fx-background-color: #eef5ff;">
+
+            <children>
+
+                <ScrollPane
+                        layoutX="0"
+                        layoutY="0"
+                        fitToWidth="true"
+                        prefWidth="650"
+                        prefHeight="700"
+                        style="-fx-background-color: transparent;">
+
+                    <content>
+
+                        <VBox spacing="25"
+                              prefWidth="600"
+                              style="-fx-padding: 30;">
+
+
+                            <Label text="My Booked Rooms"
+                                   style="-fx-font-size: 22px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: #2a2a2a;" />
+
+
+                            <ListView fx:id="myBookingsList"
+                                      prefHeight="300"
+                                      style="
+                            -fx-background-radius: 14;
+                            -fx-border-radius: 14;
+                            -fx-border-color: #a9c5ff;
+                            -fx-background-color: white;
+                          "/>
+
+                            <VBox spacing="10"
+                                  style="
+                        -fx-background-color: white;
+                        -fx-padding: 20;
+                        -fx-background-radius: 14;
+                        -fx-border-radius: 14;
+                        -fx-border-color: #d0dfff;
+                      ">
+
+                                <Label text="Unbook a Room"
+                                       style="-fx-font-size: 16px;
+                                  -fx-font-weight: bold;" />
+
+                                <HBox spacing="15">
+                                    <TextField fx:id="roomIdField"
+                                               promptText="Enter Room ID"
+                                               prefWidth="200"
+                                               style="
+                                     -fx-background-radius: 10;
+                                     -fx-padding: 8;
+                                   "/>
+
+                                    <Button text="Unbook"
+                                            onAction="#onUnbookClick"
+                                            style="
+                                  -fx-background-color: #ff6b6b;
+                                  -fx-text-fill: white;
+                                  -fx-font-size: 14px;
+                                  -fx-background-radius: 10;
+                                "
+                                            prefWidth="120"/>
+                                </HBox>
+
+                                <Label fx:id="errorLabel"
+                                       text=""
+                                       style="-fx-text-fill: red;
+                                  -fx-opacity: 0;"/>
+                            </VBox>
+
+                        </VBox>
+
+                    </content>
+                </ScrollPane>
+
+            </children>
+        </AnchorPane>
+
+    </center>
+
+
+
+</BorderPane>
